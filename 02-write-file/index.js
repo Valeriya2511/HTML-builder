@@ -7,12 +7,14 @@ stdout.write('Приветствую тебя, о странник! Поведу
 stdin.on('data', data => {
     const d = data.toString().trim();
     if(d === 'exit') {
-        process.exit((stdout.write('Прощаемся с тобой, о странник!\n')))
+        stdout.write('Прощаемся с тобой, о странник!\n');
+        process.exit();
     } else {
         stream.write(d)
     }
 });
 
 process.on('SIGINT', () => {
-    process.exit((stdout.write('Прощаемся с тобой, о странник!\n')))
+    stdout.write('Прощаемся с тобой, о странник!\n');
+    process.exit();
 });
