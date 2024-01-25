@@ -10,7 +10,7 @@ stdin.on('data', data => {
         stdout.write('Прощаемся с тобой, о странник!\n');
         process.exit();
     } else {
-        stream.write(d)
+        stream.write(`${d}\n`)
     }
 });
 
